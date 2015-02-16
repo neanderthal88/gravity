@@ -1,3 +1,9 @@
+/**
+ * Menu state: navigate to start or instructions
+ * Lose state: display game over
+ * Win state: increase level
+ */
+ 
 void menu(){
   image( start_img, 0, 0 );
   audio[1].pause(); audio[1].rewind();

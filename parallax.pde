@@ -1,3 +1,8 @@
+/**
+ * Parallax (img-file-name, parallax-speed, y-position) 
+ * Allows parallaxing graphics.
+ */
+
 class Parallax{
   float xpos, ypos;
   float speed;

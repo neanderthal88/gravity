@@ -1,3 +1,7 @@
+/**
+ * UI: Topbar shows score, goal score, level, time
+ */
+
 void topbar(){
   fill( 255 );
   

@@ -1,3 +1,9 @@
+/** Gravity - Game built in Processing
+  * This is the main program, includes all
+  * setup variables and executes draw loop.
+  * Depends on Fisica library.
+**/
+
 import fisica.*;
 import ddf.minim.*;
 Minim minim;
@@ -112,7 +118,7 @@ void setup(){
   
   reverseWorld = new FWorld();
   reverseWorld.setEdges( width/2, 60, width, height-20, color(255,0) );
-  reverseWorld.setGravity(0, -100);
+  reverseWorld.setGravity(0, -200);
   
   // set up collectibles
   for( int i=0; i < (collectibles.length)/2; i++ ) collectibles[i] = new Collectible(world, width/2 );
@@ -135,12 +141,4 @@ void draw(){
   else if( game_state == "menu" )  menu();
   else if( game_state == "win" )   win();
   else if( game_state == "instructions" ) instructions();
-}
-
-int pulse(int visible, int test, int max, int min, float change){
-  if (visible > max) { test = 0;  } //test if opacity needs to go down
-  else if (visible < min) { test = 1; } //test if opacity needs to go up
-  if (test == 1) { visible += change; } //increase opacity
-  else if (test == 0) { visible -= change; } //decrease opacity
-  return visible;
 }

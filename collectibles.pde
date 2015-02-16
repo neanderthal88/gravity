@@ -1,3 +1,12 @@
+/**
+ * Classes:
+ * Collectible (Fisica World, World-Width)
+ * Objects that the player can collect. Can be "good" or "bad" state.
+ *
+ * Object (Fisica World)
+ * Objects that the player collides into.
+ */
+
 class Collectible{
   float xpos, ypos;
   float thresh = 30;

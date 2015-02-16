@@ -1,14 +1,27 @@
+/**
+ * Play state: start game.
+ * Pause: pauses screen, includes navigation.
+ * Restart: Resets objects, points, time. 
+ */
+
 void play(){
   audio[0].pause(); audio[0].rewind();
   if( !audio[1].isPlaying() ){ audio[1].rewind(); audio[1].play(); }
   
+  // initialize level
   // draw background
-  for(int i=0; i < parallax_img.length; i++){ parallax_img[i].display(); parallax_img[i].update(); }
-  
-  level = 1;
+  if( level == 0 ) level = 1;
+  else { 
+    for( int j = 1; j < 2; j++ ){
+      if( level == j ) { 
+        for(int i=0; i < parallax_img.length; i++){ parallax_img[i].display(); parallax_img[i].update(); }
+      }
+    }
+  }
   
   keep_score = true;
   
+  // fade out from menu
   if(menu_opacity >= 50) menu_opacity -= 10;
   else menu_opacity = 0;
   fill(0, menu_opacity);
@@ -29,6 +42,7 @@ void play(){
   if( (totalTime - currentTime) != 0 && score >= goal ){
     audio[6].play(); audio[6].rewind();
     game_state = "win";
+    level++;
   }
   
   // draw collectibles

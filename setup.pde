@@ -1,3 +1,7 @@
+/**
+ * Setup for both controllable players
+ */
+
 void playerSetup(){
   // normal gravity circle
   myBox = new FCircle( 50 );

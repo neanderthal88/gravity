@@ -1,3 +1,8 @@
+/**
+ * Key Inputs: Actions on key press and key release.
+ * Array downKeys[] allows for multi-key input.
+ */
+
 void keyInputs(){
   /** keyboard inputs
     * 0 = right
